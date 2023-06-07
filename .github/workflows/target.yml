@@ -1,0 +1,22 @@
+name: Target of workflow-run
+
+on:
+  workflow_run:
+    # This has to be the `name:` of the workflow in `code_coverage.yml`.
+    # Start when this  workflow has finished successfully.
+    workflows: [trigger]
+    types:
+      - completed
+
+jobs:
+  upload:
+    runs-on: ubuntu-22.04
+    # Only run on successful pull requests. Merge commits to master upload
+    # their coverage reports directly inside `code-coverage.yml`
+    # TODO<joka921> Also make this work for pushes to the master branch!
+    if: github.event.workflow_run.conclusion == 'success'
+    steps:
+    - name: Dump Environment.
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github.event) }}
+      run: echo "$GITHUB_CONTEXT"

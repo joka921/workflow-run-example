@@ -1,0 +1,15 @@
+name: trigger
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  bim:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Dummy
+      - run: echo "hi"
+
