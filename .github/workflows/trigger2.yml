@@ -1,0 +1,13 @@
+
+name: trigger2
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Dummy
+        run: echo "hi"
+
