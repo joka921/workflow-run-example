@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Dummy
-        run: echo "hi"
+        run: echo "bim"
 
