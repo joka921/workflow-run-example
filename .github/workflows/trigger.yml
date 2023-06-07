@@ -2,14 +2,14 @@ name: trigger
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   bim:
     runs-on: ubuntu-22.04
     steps:
       - name: Dummy
-      - run: echo "hi"
+        run: echo "hi"
 
