@@ -3,6 +3,8 @@ name: trigger2
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   build:
