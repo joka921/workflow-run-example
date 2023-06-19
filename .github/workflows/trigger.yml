@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Dummy
-        run: echo "bim"
+        run: echo "bimbam"
     - name: Dump PR key.
       env:
         GITHUB_CONTEXT: ${{ toJson(github.event) }}
