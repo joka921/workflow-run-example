@@ -7,15 +7,14 @@ concurrency:
 on:
   push:
   pull_request:
-
 jobs:
-  bim:
+  build:
     runs-on: ubuntu-22.04
     steps:
       - name: Dummy
         run: echo "bim"
-    - name: Dump PR key.
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github.event) }}
-      run: echo "${{ github.event.workflow_run.pull_requests[0].url}}"
+      - name: Dump PR key.
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github.event) }}
+        run: echo "${{ github.event.workflow_run.pull_requests[0].url}}"
 
